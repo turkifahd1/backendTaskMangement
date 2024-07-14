@@ -4,8 +4,8 @@ const { authenticateToken, isAdmin } = require('../middleware/authMiddleware');
 
 const router = express.Router();
 
-router.get('/', authenticateToken, isAdmin, userauthController.getAllUsers);
-router.put('/:id', authenticateToken, isAdmin, userauthController.updateUser);
-router.delete('/:id', authenticateToken, isAdmin, userauthController.deleteUser);
+router.get('/getAllUsers', authenticateToken, isAdmin, userauthController.getAllUsers);
+router.put('/updateUser/:id', authenticateToken, isAdmin, userauthController.updateUser);
+router.delete('/deleteUser/:id', authenticateToken, isAdmin, userauthController.deleteUser);
 
 module.exports = router;
