@@ -27,7 +27,7 @@ const loginUser = async (email, password) => {
     throw new Error('Invalid email or password');
   }
   const token = jwt.sign({ id: user.id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '77w' });
-  return { token };
+  return { token, role: user.role }; // إضافة الـ role هنا
 };
 
 module.exports = { registerUser, loginUser };
